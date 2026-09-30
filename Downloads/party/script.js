@@ -96,7 +96,7 @@ function render() {
   });
 
   for (const dish of filtered) (grouped[dish.category] ||= []).push(dish);
-  const categoryOrder = ["Starters", "Main Course", "Breads", "Rice", "Drinks", "Desserts", "Other"];
+  const categoryOrder = ["Starters", "Main Course", "Breads", "Rice", "Drinks", "Other"];
   const categories = Object.keys(grouped).sort((a,b) => {
     const ai = categoryOrder.indexOf(a), bi = categoryOrder.indexOf(b);
     return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
