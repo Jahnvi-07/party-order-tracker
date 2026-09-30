@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#f7f7f5" />
+  <title>Party Order Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">🍽️ PARTY ORDER</p>
+        <h1 id="partyTitle">Party Order</h1>
+      </div>
+      <div class="live"><span></span> LIVE</div>
+    </header>
+
+    <section class="party-card">
+      <div class="party-info">
+        <small>Shared party</small>
+        <div id="partyLink" class="party-link">Loading…</div>
+      </div>
+      <button id="copyLinkBtn" class="small-btn">Share</button>
+    </section>
+
+    <section class="menu-tools">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input id="searchInput" class="search-input" type="search" placeholder="Search dishes…" autocomplete="off" />
+        <button id="clearSearchBtn" class="clear-search hidden" type="button" aria-label="Clear search">×</button>
+      </div>
+      <div class="food-filters" role="tablist" aria-label="Dish type">
+        <button class="food-filter active" data-filter="all" type="button">All</button>
+        <button class="food-filter" data-filter="veg" type="button"><span class="food-dot veg-dot"></span> Veg</button>
+        <button class="food-filter" data-filter="nonveg" type="button"><span class="food-dot nonveg-dot"></span> Non-Veg</button>
+      </div>
+    </section>
+
+    <div id="dishContainer"></div>
+
+    <button id="addNewBtn" class="add-btn">＋ Add New Dish</button>
+
+    <section class="summary-card" id="summaryCard">
+      <div class="summary-heading">
+        <div>
+          <p class="eyebrow">CURRENT ROUND</p>
+          <h2 id="totalItems">0 items</h2>
+          <p class="bill-label">Bill total: <strong id="billTotal">0 items</strong></p>
+        </div>
+        <button id="copySummaryBtn" class="small-btn">Copy</button>
+      </div>
+      <div id="summaryList" class="summary-list">
+        <p class="empty">No dishes ordered yet.</p>
+      </div>
+      <button id="resetBtn" class="reset-btn">Reset Order</button>
+    </section>
+  </main>
+
+  <div class="sticky-summary" id="stickySummary">
+    <div><strong id="stickyTotal">0 items</strong><span>Tap to view order</span></div>
+    <button type="button">View Order ↑</button>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="closeModalBtn" class="close" aria-label="Close">×</button>
+      <p class="eyebrow">NEW ITEM</p>
+      <h2>Add New Dish</h2>
+      <label for="dishName">Dish name</label>
+      <input id="dishName" type="text" placeholder="e.g. Veg Manchow Soup" autocomplete="off" />
+      <label for="dishCategory">Category</label>
+      <select id="dishCategory">
+        <option>Starters</option><option>Main Course</option><option>Breads</option>
+        <option>Rice</option><option>Drinks</option><option>Desserts</option><option>Other</option>
+      </select>
+      <label for="dishType">Type</label>
+      <select id="dishType">
+        <option value="veg">Veg</option>
+        <option value="nonveg">Non-Veg</option>
+      </select>
+      <label for="newDishQuantity">Quantity</label>
+      <input id="newDishQuantity" class="quantity-input modal-quantity" type="number" min="1" step="1" value="1" inputmode="numeric" />
+      <button id="saveDishBtn" class="primary-btn">Add Dish</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
