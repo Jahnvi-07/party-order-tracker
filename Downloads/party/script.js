@@ -16,25 +16,39 @@ if (typeof SUPABASE_URL === "undefined" || !SUPABASE_URL || SUPABASE_URL.include
 const db = supabaseClient.createClient(SUPABASE_URL, PUBLIC_KEY);
 
 const DEFAULT_DISHES = [
-  { name: "Paneer Tikka", category: "Starters", foodType: "veg" },
-  { name: "Gobi Manchurian", category: "Starters", foodType: "veg" },
-  { name: "French Fries", category: "Starters", foodType: "veg" },
-  { name: "Spring Rolls", category: "Starters", foodType: "veg" },
-  { name: "Chicken Tikka", category: "Starters", foodType: "nonveg" },
+  { name: "Baby Corn Dry", category: "Starters", foodType: "veg" },
+  { name: "Paneer Kabab", category: "Starters", foodType: "veg" },
+  { name: "Mushroom 65", category: "Starters", foodType: "veg" },
   { name: "Chicken 65", category: "Starters", foodType: "nonveg" },
+  { name: "Chicken 555", category: "Starters", foodType: "nonveg" },
+  { name: "Paneer Ghee roast", category: "Starters", foodType: "veg" },
+  { name: "Chicken ghee roast", category: "Starters", foodType: "nonveg" },
+  { name: "Chicken Manchurian", category: "Starters", foodType: "nonveg" },
+  { name: "Paneer Pepper Dry", category: "Starters", foodType: "veg" },
+  { name: "Paneer Chilli", category: "Starters", foodType: "veg" },
+  { name: "Chicken Lollipop", category: "Starters", foodType: "nonveg" },
+  { name: "Chicken Schezwan", category: "Starters", foodType: "nonveg" },
+  { name: "Chicken roast", category: "Starters", foodType: "nonveg" },
   { name: "Paneer Butter Masala", category: "Main Course", foodType: "veg" },
-  { name: "Veg Curry", category: "Main Course", foodType: "veg" },
-  { name: "Dal Tadka", category: "Main Course", foodType: "veg" },
+  { name: "Paneer Tikka Masala", category: "Main Course", foodType: "veg" },
+  { name: "Paneer Hyderabadi", category: "Main Course", foodType: "veg" },
+  { name: "Paneer Kolhapuri", category: "Main Course", foodType: "veg" },
+  { name: "Chicken Kolhapuri", category: "Main Course", foodType: "nonveg" },
+
   { name: "Butter Chicken", category: "Main Course", foodType: "nonveg" },
-  { name: "Chicken Curry", category: "Main Course", foodType: "nonveg" },
+  { name: "Chicken Hyderabadi", category: "Main Course", foodType: "nonveg" },
   { name: "Butter Naan", category: "Breads", foodType: "veg" },
-  { name: "Roti", category: "Breads", foodType: "veg" },
-  { name: "Veg Biryani", category: "Rice", foodType: "veg" },
-  { name: "Fried Rice", category: "Rice", foodType: "veg" },
+  { name: "Naan", category: "Breads", foodType: "veg" },
+  { name: "Tandoori Roti", category: "Breads", foodType: "veg" },
+  { name: "Ghee Rice", category: "Rice", foodType: "veg" },
+  { name: "Jeera Rice", category: "Rice", foodType: "veg" },
+  { name: "Veg Fried Rice", category: "Rice", foodType: "veg" },
   { name: "Chicken Biryani", category: "Rice", foodType: "nonveg" },
   { name: "Chicken Fried Rice", category: "Rice", foodType: "nonveg" },
   { name: "Water", category: "Drinks", foodType: "veg" },
-  { name: "Dessert", category: "Desserts", foodType: "veg" }
+  { name: "Cold Drinks", category: "Drinks", foodType: "veg" },
+  { name: "Beer Tower", category: "Drinks", foodType: "veg" },
+
 ];
 
 const params = new URLSearchParams(window.location.search);
